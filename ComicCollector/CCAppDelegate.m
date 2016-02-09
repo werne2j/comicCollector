@@ -6,14 +6,14 @@
 //  Copyright © 2016 Jacob Wernette. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "CCAppDelegate.h"
 #import "ViewController.h"
 
-@interface AppDelegate ()
+@interface CCAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation CCAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

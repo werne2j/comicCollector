@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BBEA86C41C6978C500C6B553 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEA86C31C6978C500C6B553 /* main.m */; };
-		BBEA86C71C6978C500C6B553 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEA86C61C6978C500C6B553 /* AppDelegate.m */; };
+		BBEA86C71C6978C500C6B553 /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEA86C61C6978C500C6B553 /* CCAppDelegate.m */; };
 		BBEA86CA1C6978C500C6B553 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEA86C91C6978C500C6B553 /* ViewController.m */; };
 		BBEA86D01C6978C500C6B553 /* ComicCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBEA86CE1C6978C500C6B553 /* ComicCollector.xcdatamodeld */; };
 		BBEA86D21C6978C500C6B553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBEA86D11C6978C500C6B553 /* Assets.xcassets */; };
@@ -19,8 +19,8 @@
 /* Begin PBXFileReference section */
 		BBEA86BF1C6978C500C6B553 /* ComicCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEA86C31C6978C500C6B553 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BBEA86C51C6978C500C6B553 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BBEA86C61C6978C500C6B553 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BBEA86C51C6978C500C6B553 /* CCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
+		BBEA86C61C6978C500C6B553 /* CCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
 		BBEA86C81C6978C500C6B553 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BBEA86C91C6978C500C6B553 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BBEA86CF1C6978C500C6B553 /* ComicCollector.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ComicCollector.xcdatamodel; sourceTree = "<group>"; };
@@ -61,8 +61,8 @@
 		BBEA86C11C6978C500C6B553 /* ComicCollector */ = {
 			isa = PBXGroup;
 			children = (
-				BBEA86C51C6978C500C6B553 /* AppDelegate.h */,
-				BBEA86C61C6978C500C6B553 /* AppDelegate.m */,
+				BBEA86C51C6978C500C6B553 /* CCAppDelegate.h */,
+				BBEA86C61C6978C500C6B553 /* CCAppDelegate.m */,
 				BBEA86DE1C6979B200C6B553 /* CCCoreDataStack.h */,
 				BBEA86DF1C6979B200C6B553 /* CCCoreDataStack.m */,
 				BBEA86C81C6978C500C6B553 /* ViewController.h */,
@@ -156,7 +156,7 @@
 				BBEA86CA1C6978C500C6B553 /* ViewController.m in Sources */,
 				BBEA86D01C6978C500C6B553 /* ComicCollector.xcdatamodeld in Sources */,
 				BBEA86E01C6979B200C6B553 /* CCCoreDataStack.m in Sources */,
-				BBEA86C71C6978C500C6B553 /* AppDelegate.m in Sources */,
+				BBEA86C71C6978C500C6B553 /* CCAppDelegate.m in Sources */,
 				BBEA86C41C6978C500C6B553 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
