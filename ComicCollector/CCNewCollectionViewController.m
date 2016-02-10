@@ -25,13 +25,25 @@
     [self setup];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(void)setup {
     self.title =  @"New Collection";
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    
+   // UIViewController * contributeViewController = [[UIViewController alloc] init];
+    UIBlurEffect * blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *beView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    beView.frame = self.view.bounds;
+    
+    self.view.frame = self.view.bounds;
+    self.view.backgroundColor = [UIColor clearColor];
+    [self.view insertSubview:beView atIndex:0];
+
 }
 
 - (IBAction)dismissNewCollection:(id)sender {

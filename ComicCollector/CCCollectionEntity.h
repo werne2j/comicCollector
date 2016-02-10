@@ -13,5 +13,4 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) NSDate *dateCreated;
 
-
 @end
