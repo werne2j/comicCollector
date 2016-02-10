@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="W2c-eM-XGI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="9ZL-X5-hgi">
+            <objects>
+                <navigationController id="W2c-eM-XGI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oWg-bT-1ci">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GXF-kY-Ajg" kind="relationship" relationship="rootViewController" id="FAb-Iz-6sC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5I-zi-GEU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="366" y="428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xGO-Qy-HKz">
+            <objects>
+                <viewController id="GXF-kY-Ajg" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6gy-lV-S7H"/>
+                        <viewControllerLayoutGuide type="bottom" id="n2p-CX-x9L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="47A-kZ-fRk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qZA-az-Y1m">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7bJ-vO-rR9">
+                            <connections>
+                                <segue destination="q21-wW-hhq" kind="presentation" id="4Sr-MS-3fo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IMi-3Q-d4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1YZ-JM-aFd">
+            <objects>
+                <navigationController id="q21-wW-hhq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yCy-21-Jp9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="syF-A0-p9P" kind="relationship" relationship="rootViewController" id="unN-3p-UNG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1on-99-w5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="1235"/>
+        </scene>
+        <!--New Collection View Controller-->
+        <scene sceneID="iZG-fn-VXf">
+            <objects>
+                <viewController id="syF-A0-p9P" customClass="CCNewCollectionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7uX-dB-Yyj"/>
+                        <viewControllerLayoutGuide type="bottom" id="V7b-hd-j06"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aJ0-VJ-5uA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Collection Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eXY-ZL-Eay">
+                                <rect key="frame" x="20" y="280" width="560" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RiS-p9-6Rm"/>
+                                    <constraint firstAttribute="width" constant="560" id="uFL-GO-Ma0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eXY-ZL-Eay" firstAttribute="centerY" secondItem="aJ0-VJ-5uA" secondAttribute="centerY" id="hsa-X2-r6M"/>
+                            <constraint firstItem="eXY-ZL-Eay" firstAttribute="centerX" secondItem="aJ0-VJ-5uA" secondAttribute="centerX" id="rWd-Zm-cGN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vpW-ZA-1hM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aY0-7Q-a7M">
+                            <connections>
+                                <action selector="dismissNewCollection:" destination="syF-A0-p9P" id="tdN-ee-cOF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bfZ-H2-HQk">
+                            <connections>
+                                <action selector="insertCollection:" destination="syF-A0-p9P" id="9Bn-Xd-zqv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameField" destination="eXY-ZL-Eay" id="jKW-83-nde"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xFB-yq-3xB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1805" y="1235"/>
+        </scene>
+    </scenes>
+</document>
