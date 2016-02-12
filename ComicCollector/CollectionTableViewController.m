@@ -11,9 +11,10 @@
 #import "CCCoreDataStack.h"
 #import <CoreData/CoreData.h>
 
-@interface CollectionTableViewController () <NSFetchedResultsControllerDelegate>
+@interface CollectionTableViewController () <NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -29,7 +30,11 @@
 
 -(void)setup {
     self.title =  @"Comic Collector";
+
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.navigationController.navigationBar.barTintColor = [UIColor greenColor];
 }
 
@@ -50,8 +55,9 @@
     
     // Configure the cell...
     CCCollectionEntity *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
+
     cell.textLabel.text = entry.name;
+    cell.detailTextLabel.text = entry.collectionDescription;
     
     return cell;
 }
@@ -90,7 +96,6 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -98,7 +103,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 - (NSFetchRequest *)entryListRequest {
     
@@ -122,6 +126,50 @@
     _fetchedResultsController.delegate = self;
     
     return _fetchedResultsController;
+}
+
+-(void) controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+-(void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
+
+-(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tableView;
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            
+            break;
+            
+        case NSFetchedResultsChangeUpdate: {
+
+            CCCollectionEntity *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            cell.textLabel.text = entry.name;
+            cell.detailTextLabel.text = entry.collectionDescription;
+            
+        }
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            
+            break;
+    }
 }
 
 @end

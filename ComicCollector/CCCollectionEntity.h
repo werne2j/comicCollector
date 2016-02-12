@@ -11,6 +11,7 @@
 @interface CCCollectionEntity : NSManagedObject
 
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *collectionDescription;
 @property (nonatomic) NSDate *dateCreated;
 
 @end

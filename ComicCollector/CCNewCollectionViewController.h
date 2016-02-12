@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CCCollectionEntity.h"
 
+
 @interface CCNewCollectionViewController : UIViewController
 
 @property (nonatomic, strong) CCCollectionEntity *entry;

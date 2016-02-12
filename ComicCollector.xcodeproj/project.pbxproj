@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB82F48A1C6D6F8D007D6701 /* CCAddItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */; };
+		BB82F48D1C6D89FE007D6701 /* CCCustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F48C1C6D89FE007D6701 /* CCCustomSearchBar.m */; };
+		BB82F4901C6D8C8C007D6701 /* CCCustomSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F48F1C6D8C8C007D6701 /* CCCustomSearchViewController.m */; };
 		BBE2FAFB1C6AAD5900375500 /* CCNewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE2FAFA1C6AAD5900375500 /* CCNewCollectionViewController.m */; };
 		BBE2FAFE1C6AB3DA00375500 /* CCCollectionEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE2FAFD1C6AB3DA00375500 /* CCCollectionEntity.m */; };
 		BBE2FB001C6AC6A400375500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE2FAFF1C6AC6A400375500 /* Main.storyboard */; };
@@ -20,6 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB82F4881C6D6F8D007D6701 /* CCAddItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddItemsTableViewController.h; sourceTree = "<group>"; };
+		BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddItemsTableViewController.m; sourceTree = "<group>"; };
+		BB82F48B1C6D89FE007D6701 /* CCCustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCustomSearchBar.h; sourceTree = "<group>"; };
+		BB82F48C1C6D89FE007D6701 /* CCCustomSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCustomSearchBar.m; sourceTree = "<group>"; };
+		BB82F48E1C6D8C8C007D6701 /* CCCustomSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCustomSearchViewController.h; sourceTree = "<group>"; };
+		BB82F48F1C6D8C8C007D6701 /* CCCustomSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCustomSearchViewController.m; sourceTree = "<group>"; };
 		BBE2FAF91C6AAD5900375500 /* CCNewCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNewCollectionViewController.h; sourceTree = "<group>"; };
 		BBE2FAFA1C6AAD5900375500 /* CCNewCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNewCollectionViewController.m; sourceTree = "<group>"; };
 		BBE2FAFC1C6AB3DA00375500 /* CCCollectionEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollectionEntity.h; sourceTree = "<group>"; };
@@ -79,12 +88,18 @@
 				BBE2FAFA1C6AAD5900375500 /* CCNewCollectionViewController.m */,
 				BBE2FB011C6AE6FA00375500 /* CollectionTableViewController.h */,
 				BBE2FB021C6AE6FA00375500 /* CollectionTableViewController.m */,
+				BB82F4881C6D6F8D007D6701 /* CCAddItemsTableViewController.h */,
+				BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */,
 				BBE2FAFF1C6AC6A400375500 /* Main.storyboard */,
 				BBEA86D11C6978C500C6B553 /* Assets.xcassets */,
 				BBEA86D31C6978C500C6B553 /* LaunchScreen.storyboard */,
 				BBEA86D61C6978C500C6B553 /* Info.plist */,
 				BBEA86CE1C6978C500C6B553 /* ComicCollector.xcdatamodeld */,
 				BBEA86C21C6978C500C6B553 /* Supporting Files */,
+				BB82F48B1C6D89FE007D6701 /* CCCustomSearchBar.h */,
+				BB82F48C1C6D89FE007D6701 /* CCCustomSearchBar.m */,
+				BB82F48E1C6D8C8C007D6701 /* CCCustomSearchViewController.h */,
+				BB82F48F1C6D8C8C007D6701 /* CCCustomSearchViewController.m */,
 			);
 			path = ComicCollector;
 			sourceTree = "<group>";
@@ -168,8 +183,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBEA86D01C6978C500C6B553 /* ComicCollector.xcdatamodeld in Sources */,
+				BB82F48D1C6D89FE007D6701 /* CCCustomSearchBar.m in Sources */,
 				BBEA86E01C6979B200C6B553 /* CCCoreDataStack.m in Sources */,
+				BB82F48A1C6D6F8D007D6701 /* CCAddItemsTableViewController.m in Sources */,
 				BBEA86C71C6978C500C6B553 /* CCAppDelegate.m in Sources */,
+				BB82F4901C6D8C8C007D6701 /* CCCustomSearchViewController.m in Sources */,
 				BBEA86C41C6978C500C6B553 /* main.m in Sources */,
 				BBE2FB031C6AE6FA00375500 /* CollectionTableViewController.m in Sources */,
 				BBE2FAFE1C6AB3DA00375500 /* CCCollectionEntity.m in Sources */,

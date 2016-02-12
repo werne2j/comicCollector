@@ -11,6 +11,7 @@
 @implementation CCCollectionEntity
 
 @dynamic name;
+@dynamic collectionDescription;
 @dynamic dateCreated;
 
 @end
