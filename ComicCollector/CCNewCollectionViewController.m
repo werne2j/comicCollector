@@ -70,11 +70,11 @@
     
     [stack saveContext];
     
-    CCAddItemsTableViewController *vc = [[CCAddItemsTableViewController alloc] init];
+    //CCAddItemsTableViewController *vc = [[CCAddItemsTableViewController alloc] init];
     
-    [self.navigationController pushViewController:vc animated:YES];
+    //[self.navigationController pushViewController:vc animated:YES];
     
-    //[self performSegueWithIdentifier:@"addItemSegue" sender:sender];
+    [self performSegueWithIdentifier:@"selectItemType" sender:sender];
     
     //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     

@@ -52,7 +52,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yYJ-4W-oAg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="vyT-9T-9g9" detailTextLabel="F9w-Kc-s21" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="3tg-Pw-ooN">
                                         <rect key="frame" x="0.0" y="92" width="600" height="65"/>
@@ -65,18 +65,21 @@
                                                     <rect key="frame" x="15" y="16" width="31.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F9w-Kc-s21">
                                                     <rect key="frame" x="15" y="35.5" width="40.5" height="13.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Y0F-Mu-Cer" kind="show" identifier="collectionDetailSegue" id="3Xd-iz-hfv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -103,6 +106,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxV-Bl-K2w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1078" y="434"/>
+        </scene>
+        <!--Collection Detail View Controller-->
+        <scene sceneID="HGi-gT-OAq">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Y0F-Mu-Cer" customClass="CCCollectionDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RVw-2M-8xH"/>
+                        <viewControllerLayoutGuide type="bottom" id="b7g-sd-Ayy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RqA-vl-RN0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jbe-mT-cK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1763" y="434"/>
         </scene>
         <!--New Collection View Controller-->
         <scene sceneID="iZG-fn-VXf">
@@ -165,11 +186,147 @@
                         <outlet property="descriptionField" destination="Ztq-C8-400" id="Y0u-ap-65D"/>
                         <outlet property="insertCollectionButton" destination="bfZ-H2-HQk" id="AHh-51-o7o"/>
                         <outlet property="nameField" destination="eXY-ZL-Eay" id="jKW-83-nde"/>
+                        <segue destination="Pgp-lj-mvo" kind="show" identifier="selectItemType" id="uTT-qw-Q6R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFB-yq-3xB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1794" y="1235"/>
+        </scene>
+        <!--Item Type View Controller-->
+        <scene sceneID="L2z-Fb-7xs">
+            <objects>
+                <viewController id="Pgp-lj-mvo" customClass="CCItemTypeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xzB-h9-oew"/>
+                        <viewControllerLayoutGuide type="bottom" id="zoP-6g-oTx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a8D-xo-q3Q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="Klo-oy-Zno">
+                                <rect key="frame" x="150" y="250" width="300" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPD-rz-ab9" customClass="CCTypeButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.46724272150000001" green="0.92109784029999997" blue="0.4446944847" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="1LH-Zc-2Mr"/>
+                                            <constraint firstAttribute="width" constant="100" id="L0J-Li-oi3"/>
+                                        </constraints>
+                                        <state key="normal" title="Series"/>
+                                        <connections>
+                                            <action selector="presentSearch:" destination="Pgp-lj-mvo" eventType="touchUpInside" id="FXD-ui-o2g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFe-S8-ooT" customClass="CCTypeButton">
+                                        <rect key="frame" x="200" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.46724272150000001" green="0.92109784029999997" blue="0.4446944847" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Mgi-40-8hA"/>
+                                            <constraint firstAttribute="height" constant="100" id="cGj-wt-hb0"/>
+                                        </constraints>
+                                        <state key="normal" title="Character"/>
+                                        <connections>
+                                            <action selector="presentSearch:" destination="Pgp-lj-mvo" eventType="touchUpInside" id="NuZ-b7-Iwj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="vQY-pb-iej">
+                                <rect key="frame" x="150" y="102" width="300" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPz-9e-AD3" customClass="CCTypeButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.46724272150000001" green="0.92109784029999997" blue="0.4446944847" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="s8n-za-xGi"/>
+                                            <constraint firstAttribute="height" constant="100" id="y8L-gb-tLB"/>
+                                        </constraints>
+                                        <state key="normal" title="Comic"/>
+                                        <connections>
+                                            <action selector="presentSearch:" destination="Pgp-lj-mvo" eventType="touchUpInside" id="4gx-c8-AmL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwJ-N4-Vlx" customClass="CCTypeButton">
+                                        <rect key="frame" x="200" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.46724272150000001" green="0.92109784029999997" blue="0.4446944847" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="4DP-85-sxj"/>
+                                            <constraint firstAttribute="height" constant="100" id="MwR-gU-uK6"/>
+                                        </constraints>
+                                        <state key="normal" title="Event"/>
+                                        <connections>
+                                            <action selector="presentSearch:" destination="Pgp-lj-mvo" eventType="touchUpInside" id="7Nw-KJ-Teg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxF-gF-Awp" customClass="CCTypeButton">
+                                <rect key="frame" x="250" y="399" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.46724272150000001" green="0.92109784029999997" blue="0.4446944847" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="E00-JW-YBk"/>
+                                    <constraint firstAttribute="width" constant="100" id="NUC-ru-OK2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="presentSearch:" destination="Pgp-lj-mvo" eventType="touchUpInside" id="4AG-eR-fwD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oxF-gF-Awp" firstAttribute="top" secondItem="Klo-oy-Zno" secondAttribute="bottom" constant="49" id="68o-Mg-dRt"/>
+                            <constraint firstItem="Klo-oy-Zno" firstAttribute="centerY" secondItem="a8D-xo-q3Q" secondAttribute="centerY" id="M2W-fd-DzP"/>
+                            <constraint firstItem="Klo-oy-Zno" firstAttribute="centerX" secondItem="a8D-xo-q3Q" secondAttribute="centerX" id="bzd-Qd-uLo"/>
+                            <constraint firstItem="oxF-gF-Awp" firstAttribute="centerX" secondItem="a8D-xo-q3Q" secondAttribute="centerX" id="fxR-Mh-5v8"/>
+                            <constraint firstItem="vQY-pb-iej" firstAttribute="centerX" secondItem="Klo-oy-Zno" secondAttribute="centerX" id="scY-YF-CeY"/>
+                            <constraint firstItem="Klo-oy-Zno" firstAttribute="top" secondItem="vQY-pb-iej" secondAttribute="bottom" constant="48" id="xWk-0U-Kj0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cXP-zw-6yB"/>
+                    <connections>
+                        <outlet property="characterTypeButton" destination="fFe-S8-ooT" id="BZ1-bk-TYW"/>
+                        <outlet property="comicTypeButton" destination="DPz-9e-AD3" id="SUg-g5-X9Y"/>
+                        <outlet property="eventTypeButton" destination="rwJ-N4-Vlx" id="oqo-Gf-H3e"/>
+                        <outlet property="seriesTypeButton" destination="DPD-rz-ab9" id="lQ2-wf-gTE"/>
+                        <outlet property="storyTypeButton" destination="oxF-gF-Awp" id="ieo-sY-7WA"/>
+                        <segue destination="ogK-L9-Ad0" kind="show" identifier="itemSearchSegue" id="PIv-Xm-q5t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsV-tu-SeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2470" y="1235"/>
+        </scene>
+        <!--Add Items Table View Controller-->
+        <scene sceneID="7Lb-RW-U8o">
+            <objects>
+                <tableViewController id="ogK-L9-Ad0" customClass="CCAddItemsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="hx3-5c-rIV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="70" id="6aW-eh-LqC">
+                                <rect key="frame" x="0.0" y="92" width="600" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6aW-eh-LqC" id="uaY-5k-AEv">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ogK-L9-Ad0" id="oJO-y0-8Rh"/>
+                            <outlet property="delegate" destination="ogK-L9-Ad0" id="i8p-c4-vcy"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Lg-SI-ujp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3163" y="1235"/>
         </scene>
     </scenes>
 </document>

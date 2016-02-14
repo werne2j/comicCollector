@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E3B07C314420D11B5A493A3 /* libPods-ComicCollector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA62B542911B6618F5EE6AD /* libPods-ComicCollector.a */; };
 		BB82F48A1C6D6F8D007D6701 /* CCAddItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */; };
 		BB82F48D1C6D89FE007D6701 /* CCCustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F48C1C6D89FE007D6701 /* CCCustomSearchBar.m */; };
 		BB82F4901C6D8C8C007D6701 /* CCCustomSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F48F1C6D8C8C007D6701 /* CCCustomSearchViewController.m */; };
@@ -20,9 +21,15 @@
 		BBEA86D21C6978C500C6B553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBEA86D11C6978C500C6B553 /* Assets.xcassets */; };
 		BBEA86D51C6978C500C6B553 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEA86D31C6978C500C6B553 /* LaunchScreen.storyboard */; };
 		BBEA86E01C6979B200C6B553 /* CCCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEA86DF1C6979B200C6B553 /* CCCoreDataStack.m */; };
+		BBF8F5C11C6ED9B300743491 /* CCItemTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF8F5C01C6ED9B300743491 /* CCItemTypeViewController.m */; };
+		BBF8F5C41C6EDA9700743491 /* CCTypeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF8F5C31C6EDA9700743491 /* CCTypeButton.m */; };
+		BBF8F5CA1C6EEB8300743491 /* CCCollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF8F5C91C6EEB8300743491 /* CCCollectionDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EA62B542911B6618F5EE6AD /* libPods-ComicCollector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComicCollector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		762508E850E0D4061614D1F5 /* Pods-ComicCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComicCollector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComicCollector/Pods-ComicCollector.debug.xcconfig"; sourceTree = "<group>"; };
+		A9E9B665A7A96A8EB0CC5D57 /* Pods-ComicCollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComicCollector.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComicCollector/Pods-ComicCollector.release.xcconfig"; sourceTree = "<group>"; };
 		BB82F4881C6D6F8D007D6701 /* CCAddItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddItemsTableViewController.h; sourceTree = "<group>"; };
 		BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddItemsTableViewController.m; sourceTree = "<group>"; };
 		BB82F48B1C6D89FE007D6701 /* CCCustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCustomSearchBar.h; sourceTree = "<group>"; };
@@ -46,6 +53,12 @@
 		BBEA86D61C6978C500C6B553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBEA86DE1C6979B200C6B553 /* CCCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreDataStack.h; sourceTree = "<group>"; };
 		BBEA86DF1C6979B200C6B553 /* CCCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCoreDataStack.m; sourceTree = "<group>"; };
+		BBF8F5BF1C6ED9B300743491 /* CCItemTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCItemTypeViewController.h; sourceTree = "<group>"; };
+		BBF8F5C01C6ED9B300743491 /* CCItemTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCItemTypeViewController.m; sourceTree = "<group>"; };
+		BBF8F5C21C6EDA9700743491 /* CCTypeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTypeButton.h; sourceTree = "<group>"; };
+		BBF8F5C31C6EDA9700743491 /* CCTypeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTypeButton.m; sourceTree = "<group>"; };
+		BBF8F5C81C6EEB8300743491 /* CCCollectionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollectionDetailViewController.h; sourceTree = "<group>"; };
+		BBF8F5C91C6EEB8300743491 /* CCCollectionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollectionDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +66,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E3B07C314420D11B5A493A3 /* libPods-ComicCollector.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAE4AEC1C0CACB805930EA37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				762508E850E0D4061614D1F5 /* Pods-ComicCollector.debug.xcconfig */,
+				A9E9B665A7A96A8EB0CC5D57 /* Pods-ComicCollector.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BBEA86B61C6978C500C6B553 = {
 			isa = PBXGroup;
 			children = (
 				BBEA86C11C6978C500C6B553 /* ComicCollector */,
 				BBEA86C01C6978C500C6B553 /* Products */,
+				AAE4AEC1C0CACB805930EA37 /* Pods */,
+				F31B8AB2D61FD6ABA4C3C9D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,26 +105,17 @@
 			children = (
 				BBEA86C51C6978C500C6B553 /* CCAppDelegate.h */,
 				BBEA86C61C6978C500C6B553 /* CCAppDelegate.m */,
-				BBEA86DE1C6979B200C6B553 /* CCCoreDataStack.h */,
-				BBEA86DF1C6979B200C6B553 /* CCCoreDataStack.m */,
-				BBE2FAFC1C6AB3DA00375500 /* CCCollectionEntity.h */,
-				BBE2FAFD1C6AB3DA00375500 /* CCCollectionEntity.m */,
-				BBE2FAF91C6AAD5900375500 /* CCNewCollectionViewController.h */,
-				BBE2FAFA1C6AAD5900375500 /* CCNewCollectionViewController.m */,
-				BBE2FB011C6AE6FA00375500 /* CollectionTableViewController.h */,
-				BBE2FB021C6AE6FA00375500 /* CollectionTableViewController.m */,
-				BB82F4881C6D6F8D007D6701 /* CCAddItemsTableViewController.h */,
-				BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */,
+				BBF8F5CB1C6FC55B00743491 /* Core Data */,
+				BBF8F5CC1C6FC56700743491 /* Models */,
+				BBF8F5CE1C6FC5C800743491 /* Collection */,
+				BBF8F5CF1C6FC5F700743491 /* Item */,
+				BBF8F5CD1C6FC59200743491 /* Custom Search */,
 				BBE2FAFF1C6AC6A400375500 /* Main.storyboard */,
 				BBEA86D11C6978C500C6B553 /* Assets.xcassets */,
 				BBEA86D31C6978C500C6B553 /* LaunchScreen.storyboard */,
 				BBEA86D61C6978C500C6B553 /* Info.plist */,
 				BBEA86CE1C6978C500C6B553 /* ComicCollector.xcdatamodeld */,
 				BBEA86C21C6978C500C6B553 /* Supporting Files */,
-				BB82F48B1C6D89FE007D6701 /* CCCustomSearchBar.h */,
-				BB82F48C1C6D89FE007D6701 /* CCCustomSearchBar.m */,
-				BB82F48E1C6D8C8C007D6701 /* CCCustomSearchViewController.h */,
-				BB82F48F1C6D8C8C007D6701 /* CCCustomSearchViewController.m */,
 			);
 			path = ComicCollector;
 			sourceTree = "<group>";
@@ -112,6 +128,69 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BBF8F5CB1C6FC55B00743491 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				BBEA86DE1C6979B200C6B553 /* CCCoreDataStack.h */,
+				BBEA86DF1C6979B200C6B553 /* CCCoreDataStack.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		BBF8F5CC1C6FC56700743491 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBE2FAFC1C6AB3DA00375500 /* CCCollectionEntity.h */,
+				BBE2FAFD1C6AB3DA00375500 /* CCCollectionEntity.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		BBF8F5CD1C6FC59200743491 /* Custom Search */ = {
+			isa = PBXGroup;
+			children = (
+				BB82F48B1C6D89FE007D6701 /* CCCustomSearchBar.h */,
+				BB82F48C1C6D89FE007D6701 /* CCCustomSearchBar.m */,
+				BB82F48E1C6D8C8C007D6701 /* CCCustomSearchViewController.h */,
+				BB82F48F1C6D8C8C007D6701 /* CCCustomSearchViewController.m */,
+			);
+			name = "Custom Search";
+			sourceTree = "<group>";
+		};
+		BBF8F5CE1C6FC5C800743491 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				BBE2FB011C6AE6FA00375500 /* CollectionTableViewController.h */,
+				BBE2FB021C6AE6FA00375500 /* CollectionTableViewController.m */,
+				BBF8F5C81C6EEB8300743491 /* CCCollectionDetailViewController.h */,
+				BBF8F5C91C6EEB8300743491 /* CCCollectionDetailViewController.m */,
+				BBE2FAF91C6AAD5900375500 /* CCNewCollectionViewController.h */,
+				BBE2FAFA1C6AAD5900375500 /* CCNewCollectionViewController.m */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
+		BBF8F5CF1C6FC5F700743491 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				BB82F4881C6D6F8D007D6701 /* CCAddItemsTableViewController.h */,
+				BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */,
+				BBF8F5BF1C6ED9B300743491 /* CCItemTypeViewController.h */,
+				BBF8F5C01C6ED9B300743491 /* CCItemTypeViewController.m */,
+				BBF8F5C21C6EDA9700743491 /* CCTypeButton.h */,
+				BBF8F5C31C6EDA9700743491 /* CCTypeButton.m */,
+			);
+			name = Item;
+			sourceTree = "<group>";
+		};
+		F31B8AB2D61FD6ABA4C3C9D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EA62B542911B6618F5EE6AD /* libPods-ComicCollector.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBEA86D91C6978C500C6B553 /* Build configuration list for PBXNativeTarget "ComicCollector" */;
 			buildPhases = (
+				27F9532D6CF4BCA45D008A88 /* Check Pods Manifest.lock */,
 				BBEA86BB1C6978C500C6B553 /* Sources */,
 				BBEA86BC1C6978C500C6B553 /* Frameworks */,
 				BBEA86BD1C6978C500C6B553 /* Resources */,
+				573B70C6410C92F4B0103544 /* Embed Pods Frameworks */,
+				D8F92FC0C7677E34323D779C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,12 +259,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27F9532D6CF4BCA45D008A88 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		573B70C6410C92F4B0103544 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ComicCollector/Pods-ComicCollector-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8F92FC0C7677E34323D779C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ComicCollector/Pods-ComicCollector-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BBEA86BB1C6978C500C6B553 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BBEA86D01C6978C500C6B553 /* ComicCollector.xcdatamodeld in Sources */,
+				BBF8F5C41C6EDA9700743491 /* CCTypeButton.m in Sources */,
+				BBF8F5C11C6ED9B300743491 /* CCItemTypeViewController.m in Sources */,
 				BB82F48D1C6D89FE007D6701 /* CCCustomSearchBar.m in Sources */,
 				BBEA86E01C6979B200C6B553 /* CCCoreDataStack.m in Sources */,
 				BB82F48A1C6D6F8D007D6701 /* CCAddItemsTableViewController.m in Sources */,
@@ -190,6 +322,7 @@
 				BB82F4901C6D8C8C007D6701 /* CCCustomSearchViewController.m in Sources */,
 				BBEA86C41C6978C500C6B553 /* main.m in Sources */,
 				BBE2FB031C6AE6FA00375500 /* CollectionTableViewController.m in Sources */,
+				BBF8F5CA1C6EEB8300743491 /* CCCollectionDetailViewController.m in Sources */,
 				BBE2FAFE1C6AB3DA00375500 /* CCCollectionEntity.m in Sources */,
 				BBE2FAFB1C6AAD5900375500 /* CCNewCollectionViewController.m in Sources */,
 			);
@@ -293,6 +426,7 @@
 		};
 		BBEA86DA1C6978C500C6B553 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 762508E850E0D4061614D1F5 /* Pods-ComicCollector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ComicCollector/Info.plist;
@@ -304,6 +438,7 @@
 		};
 		BBEA86DB1C6978C500C6B553 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9E9B665A7A96A8EB0CC5D57 /* Pods-ComicCollector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ComicCollector/Info.plist;

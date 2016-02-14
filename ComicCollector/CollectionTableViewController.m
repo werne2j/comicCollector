@@ -8,6 +8,7 @@
 
 #import "CollectionTableViewController.h"
 #import "CCNewCollectionViewController.h"
+#import "CCCollectionDetailViewController.h"
 #import "CCCoreDataStack.h"
 #import <CoreData/CoreData.h>
 
@@ -26,6 +27,8 @@
     [self setup];
     
     [self.fetchedResultsController performFetch:nil];
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Collections" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 -(void)setup {
@@ -102,7 +105,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"collectionDetailSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        CCCollectionDetailViewController *vc = [segue destinationViewController];
+        CCCollectionEntity *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        vc.entity = entry;
+    }
+    
 }
+
+
 
 - (NSFetchRequest *)entryListRequest {
     

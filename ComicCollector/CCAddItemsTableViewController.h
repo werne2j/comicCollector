@@ -10,4 +10,6 @@
 
 @interface CCAddItemsTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSString *itemType;
+
 @end
