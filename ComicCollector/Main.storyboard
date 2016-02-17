@@ -115,7 +115,7 @@
                         <viewControllerLayoutGuide type="top" id="RVw-2M-8xH"/>
                         <viewControllerLayoutGuide type="bottom" id="b7g-sd-Ayy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RqA-vl-RN0">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="RqA-vl-RN0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
