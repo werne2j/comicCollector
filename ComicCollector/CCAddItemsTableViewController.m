@@ -9,6 +9,8 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CCAddItemsTableViewController.h"
 #import "CCCustomSearchViewController.h"
+#import "CCCoreDataStack.h"
+#import "Comic.h"
 
 @interface CCAddItemsTableViewController () <UISearchBarDelegate, UISearchResultsUpdating>
 
@@ -93,9 +95,49 @@
 
     
     UIButton *contactAddButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    [contactAddButton setTag:indexPath.row];
+    [contactAddButton addTarget:self action:@selector(addItem:) forControlEvents:UIControlEventTouchUpInside];
     cell.accessoryView = contactAddButton;
     
+    
     return cell;
+}
+
+- (void)addItem:(id)sender {
+    NSLog(@"%ld", (long)[sender tag]);
+    NSLog(@"%@", [self.searchResults objectAtIndex:[sender tag]]);
+    
+    NSLog(@"%@", self.entry);
+    
+    NSInteger row = [sender tag];
+    NSDictionary *obj = [self.searchResults objectAtIndex:row];
+    
+    CCCoreDataStack *stack = [CCCoreDataStack defaultStack];
+
+    Collection *collection = self.entry;
+    
+    Comic *comic = [NSEntityDescription insertNewObjectForEntityForName:@"Comic" inManagedObjectContext:stack.managedObjectContext];
+    comic.id = [obj valueForKey:@"id"];
+    comic.digitalId = [obj valueForKey:@"digitalId"];
+    comic.title = [obj valueForKey:@"title"];
+    
+    if ([[obj valueForKey:@"description"] isKindOfClass:[NSNull class]]) {
+       comic.comicDescription = @"";
+    } else {
+       comic.comicDescription = [obj valueForKey:@"description"];
+    }
+    
+    NSURL *thumbnailURL = [[NSURL alloc] initWithString:[obj valueForKey:@"thumbnail"]];
+    NSData *data = [NSData dataWithContentsOfURL:thumbnailURL];
+    NSData *base64 = [data base64EncodedDataWithOptions:NSUTF8StringEncoding];
+    
+    comic.thumbnail = base64;
+    
+    [collection addComicsObject:comic];
+    
+    [stack saveContext];
+    
+    
 }
 
 

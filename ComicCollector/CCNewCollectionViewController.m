@@ -8,8 +8,9 @@
 
 #import "CCNewCollectionViewController.h"
 #import "CCAddItemsTableViewController.h"
-#import "CCCollectionEntity.h"
+#import "CCItemTypeViewController.h"
 #import "CCCoreDataStack.h"
+#import "Collection.h"
 
 @interface CCNewCollectionViewController ()
 
@@ -61,12 +62,12 @@
     
     CCCoreDataStack *stack = [CCCoreDataStack defaultStack];
 
-    CCCollectionEntity *entry = [NSEntityDescription insertNewObjectForEntityForName:@"CCCollectionEntity" inManagedObjectContext:stack.managedObjectContext];
+    self.entry = [NSEntityDescription insertNewObjectForEntityForName:@"Collection" inManagedObjectContext:stack.managedObjectContext];
     
-    entry.name = self.nameField.text;
-    entry.collectionDescription = self.descriptionField.text;
+    self.entry.name = self.nameField.text;
+    self.entry.collectionDescription = self.descriptionField.text;
     
-    [entry setDateCreated:[NSDate date]];
+    [self.entry setDateCreated:[NSDate date]];
     
     [stack saveContext];
     
@@ -85,14 +86,18 @@
     self.insertCollectionButton.enabled = sender.text.length > 0;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    CCItemTypeViewController *vc = [segue destinationViewController];
+    NSLog(@"%@", self.entry);
+    vc.entry = self.entry;
+    
 }
-*/
+
 
 @end

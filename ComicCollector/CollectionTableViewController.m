@@ -10,6 +10,7 @@
 #import "CCNewCollectionViewController.h"
 #import "CCCollectionDetailViewController.h"
 #import "CCCoreDataStack.h"
+#import "Comic.h"
 #import <CoreData/CoreData.h>
 
 @interface CollectionTableViewController () <NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource>
@@ -57,10 +58,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
-    CCCollectionEntity *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Collection *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
 
     cell.textLabel.text = entry.name;
     cell.detailTextLabel.text = entry.collectionDescription;
+    
+    for (Comic *object in entry.comics) {
+        NSLog(@"%@", object.title);
+    }
     
     return cell;
 }
@@ -109,8 +114,8 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         CCCollectionDetailViewController *vc = [segue destinationViewController];
-        CCCollectionEntity *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        vc.entity = entry;
+        Collection *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        vc.collection = entry;
     }
     
 }
@@ -119,7 +124,7 @@
 
 - (NSFetchRequest *)entryListRequest {
     
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CCCollectionEntity"];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Collection"];
     
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO]];
     
@@ -168,7 +173,7 @@
             
         case NSFetchedResultsChangeUpdate: {
 
-            CCCollectionEntity *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            Collection *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
             cell.textLabel.text = entry.name;
             cell.detailTextLabel.text = entry.collectionDescription;

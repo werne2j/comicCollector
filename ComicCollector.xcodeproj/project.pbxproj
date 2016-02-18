@@ -11,8 +11,10 @@
 		BB82F48A1C6D6F8D007D6701 /* CCAddItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */; };
 		BB82F48D1C6D89FE007D6701 /* CCCustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F48C1C6D89FE007D6701 /* CCCustomSearchBar.m */; };
 		BB82F4901C6D8C8C007D6701 /* CCCustomSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F48F1C6D8C8C007D6701 /* CCCustomSearchViewController.m */; };
+		BBD35C611C754B5900B68427 /* Comic.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD35C601C754B5900B68427 /* Comic.m */; };
+		BBD35C6D1C755FBF00B68427 /* Collection+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD35C6A1C755FBF00B68427 /* Collection+CoreDataProperties.m */; };
+		BBD35C6E1C755FBF00B68427 /* Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD35C6C1C755FBF00B68427 /* Collection.m */; };
 		BBE2FAFB1C6AAD5900375500 /* CCNewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE2FAFA1C6AAD5900375500 /* CCNewCollectionViewController.m */; };
-		BBE2FAFE1C6AB3DA00375500 /* CCCollectionEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE2FAFD1C6AB3DA00375500 /* CCCollectionEntity.m */; };
 		BBE2FB001C6AC6A400375500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE2FAFF1C6AC6A400375500 /* Main.storyboard */; };
 		BBE2FB031C6AE6FA00375500 /* CollectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE2FB021C6AE6FA00375500 /* CollectionTableViewController.m */; };
 		BBEA86C41C6978C500C6B553 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEA86C31C6978C500C6B553 /* main.m */; };
@@ -36,10 +38,14 @@
 		BB82F48C1C6D89FE007D6701 /* CCCustomSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCustomSearchBar.m; sourceTree = "<group>"; };
 		BB82F48E1C6D8C8C007D6701 /* CCCustomSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCustomSearchViewController.h; sourceTree = "<group>"; };
 		BB82F48F1C6D8C8C007D6701 /* CCCustomSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCustomSearchViewController.m; sourceTree = "<group>"; };
+		BBD35C5F1C754B5900B68427 /* Comic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comic.h; sourceTree = "<group>"; };
+		BBD35C601C754B5900B68427 /* Comic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comic.m; sourceTree = "<group>"; };
+		BBD35C691C755FBF00B68427 /* Collection+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Collection+CoreDataProperties.h"; sourceTree = "<group>"; };
+		BBD35C6A1C755FBF00B68427 /* Collection+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Collection+CoreDataProperties.m"; sourceTree = "<group>"; };
+		BBD35C6B1C755FBF00B68427 /* Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collection.h; sourceTree = "<group>"; };
+		BBD35C6C1C755FBF00B68427 /* Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collection.m; sourceTree = "<group>"; };
 		BBE2FAF91C6AAD5900375500 /* CCNewCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNewCollectionViewController.h; sourceTree = "<group>"; };
 		BBE2FAFA1C6AAD5900375500 /* CCNewCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNewCollectionViewController.m; sourceTree = "<group>"; };
-		BBE2FAFC1C6AB3DA00375500 /* CCCollectionEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollectionEntity.h; sourceTree = "<group>"; };
-		BBE2FAFD1C6AB3DA00375500 /* CCCollectionEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollectionEntity.m; sourceTree = "<group>"; };
 		BBE2FAFF1C6AC6A400375500 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BBE2FB011C6AE6FA00375500 /* CollectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionTableViewController.h; sourceTree = "<group>"; };
 		BBE2FB021C6AE6FA00375500 /* CollectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionTableViewController.m; sourceTree = "<group>"; };
@@ -140,8 +146,12 @@
 		BBF8F5CC1C6FC56700743491 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BBE2FAFC1C6AB3DA00375500 /* CCCollectionEntity.h */,
-				BBE2FAFD1C6AB3DA00375500 /* CCCollectionEntity.m */,
+				BBD35C691C755FBF00B68427 /* Collection+CoreDataProperties.h */,
+				BBD35C6A1C755FBF00B68427 /* Collection+CoreDataProperties.m */,
+				BBD35C6B1C755FBF00B68427 /* Collection.h */,
+				BBD35C6C1C755FBF00B68427 /* Collection.m */,
+				BBD35C5F1C754B5900B68427 /* Comic.h */,
+				BBD35C601C754B5900B68427 /* Comic.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -313,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBEA86D01C6978C500C6B553 /* ComicCollector.xcdatamodeld in Sources */,
+				BBD35C6D1C755FBF00B68427 /* Collection+CoreDataProperties.m in Sources */,
 				BBF8F5C41C6EDA9700743491 /* CCTypeButton.m in Sources */,
 				BBF8F5C11C6ED9B300743491 /* CCItemTypeViewController.m in Sources */,
 				BB82F48D1C6D89FE007D6701 /* CCCustomSearchBar.m in Sources */,
@@ -322,9 +333,10 @@
 				BB82F4901C6D8C8C007D6701 /* CCCustomSearchViewController.m in Sources */,
 				BBEA86C41C6978C500C6B553 /* main.m in Sources */,
 				BBE2FB031C6AE6FA00375500 /* CollectionTableViewController.m in Sources */,
+				BBD35C6E1C755FBF00B68427 /* Collection.m in Sources */,
 				BBF8F5CA1C6EEB8300743491 /* CCCollectionDetailViewController.m in Sources */,
-				BBE2FAFE1C6AB3DA00375500 /* CCCollectionEntity.m in Sources */,
 				BBE2FAFB1C6AAD5900375500 /* CCNewCollectionViewController.m in Sources */,
+				BBD35C611C754B5900B68427 /* Comic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

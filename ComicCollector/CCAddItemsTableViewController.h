@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Collection.h"
 
 @interface CCAddItemsTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSString *itemType;
+@property (nonatomic, strong) Collection *entry;
 
 @end

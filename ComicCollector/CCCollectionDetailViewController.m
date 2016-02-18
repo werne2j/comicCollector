@@ -8,6 +8,7 @@
 
 #import "CCCollectionDetailViewController.h"
 #import "LTInfiniteScrollView.h"
+#import "Comic.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -16,6 +17,7 @@
 @interface CCCollectionDetailViewController () <LTInfiniteScrollViewDelegate,LTInfiniteScrollViewDataSource>
 
 @property (strong, nonatomic) LTInfiniteScrollView *scrollView;
+@property (strong, nonatomic) NSArray *comicArray;
 
 @end
 
@@ -26,7 +28,7 @@
 
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
-    self.title =  self.entity.name;
+    self.title =  self.collection.name;
     
     // Do any additional setup after loading the view.
     self.scrollView = [[LTInfiniteScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
@@ -35,6 +37,12 @@
     self.scrollView.dataSource = self;
     self.scrollView.delegate = self;
     self.scrollView.maxScrollDistance = 3;
+    
+    for (Comic *object in self.collection.comics) {
+        NSLog(@"%@", object.title);
+    }
+    
+    self.comicArray = [self.collection.comics allObjects];
 }
 
 
@@ -61,7 +69,7 @@
 # pragma mark - LTInfiniteScrollView dataSource
 - (NSInteger)numberOfViews
 {
-    return 5;
+    return [self.collection.comics count];
 }
 
 - (NSInteger)numberOfVisibleViews
@@ -91,6 +99,22 @@
     snapshot.layer.shadowOffset = CGSizeMake(2.0f, 2.0f);
     snapshot.layer.shadowOpacity = .3;
     snapshot.layer.shadowPath = shadowPath.CGPath;
+    
+    NSLog(@"%@", [self.comicArray objectAtIndex:index]);
+    
+    Comic *comic = [self.comicArray objectAtIndex:index];
+    
+    NSString *myString = [[NSString alloc] initWithData:comic.thumbnail encoding:NSUTF8StringEncoding];
+    NSData* data = [[NSData alloc] initWithBase64EncodedString:myString options:0];
+    UIImage* image = [UIImage imageWithData:data];
+    
+    UIGraphicsBeginImageContext(snapshot.frame.size);
+    [image drawInRect:snapshot.bounds];
+    UIImage *butts = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    snapshot.backgroundColor = [UIColor colorWithPatternImage:butts];
+    
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemSelected:)];
     [snapshot addGestureRecognizer:tap];

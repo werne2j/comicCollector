@@ -43,6 +43,7 @@
     
     CCAddItemsTableViewController *vc = [segue destinationViewController];
     vc.itemType = [sender currentTitle];
+    vc.entry = self.entry;
 }
 
 

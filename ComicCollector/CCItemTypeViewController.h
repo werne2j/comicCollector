@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Collection.h"
 
 @interface CCItemTypeViewController : UIViewController
+
+@property (nonatomic, strong) Collection *entry;
 
 @end
