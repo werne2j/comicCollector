@@ -120,10 +120,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="gF8-0u-yD8" kind="presentation" identifier="comicDetail" id="8gk-jT-h4k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbe-mT-cK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1763" y="434"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="yzD-ax-7Vg">
+            <objects>
+                <viewController id="gF8-0u-yD8" customClass="CCItemDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4mG-WA-eTI"/>
+                        <viewControllerLayoutGuide type="bottom" id="BVZ-t0-hEV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Que-sx-upe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOu-8n-oxy">
+                                <rect key="frame" x="115" y="149" width="165" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7an-Be-Mye">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="c1c-1l-8RP">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="AYr-OO-XHi">
+                                            <connections>
+                                                <action selector="dismissModal:" destination="gF8-0u-yD8" id="qlo-bg-m5H"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="TEv-Lm-VEF"/>
+                    <connections>
+                        <outlet property="comicLabel" destination="BOu-8n-oxy" id="EwR-Bg-C79"/>
+                        <outlet property="navBar" destination="7an-Be-Mye" id="hQb-0O-lNl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pV9-IW-4uq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2442" y="434"/>
         </scene>
         <!--New Collection View Controller-->
         <scene sceneID="iZG-fn-VXf">

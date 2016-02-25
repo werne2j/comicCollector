@@ -7,6 +7,7 @@
 //
 
 #import "CCAppDelegate.h"
+#import <Realm/Realm.h>
 
 @interface CCAppDelegate ()
 

@@ -12,6 +12,5 @@
 
 @interface CCNewCollectionViewController : UIViewController
 
-@property (nonatomic, strong) Collection *entry;
 
 @end

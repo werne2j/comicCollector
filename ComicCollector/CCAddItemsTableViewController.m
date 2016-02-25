@@ -5,11 +5,12 @@
 //  Created by Jacob Wernette on 2/11/16.
 //  Copyright © 2016 Jacob Wernette. All rights reserved.
 //
+#import <Realm/Realm.h>
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CCAddItemsTableViewController.h"
 #import "CCCustomSearchViewController.h"
-#import "CCCoreDataStack.h"
+
 #import "Comic.h"
 
 @interface CCAddItemsTableViewController () <UISearchBarDelegate, UISearchResultsUpdating>
@@ -76,9 +77,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchCell" forIndexPath:indexPath];
-    
-    
+
     static NSString *CellIdentifier = @"searchCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -107,16 +106,15 @@
     NSLog(@"%ld", (long)[sender tag]);
     NSLog(@"%@", [self.searchResults objectAtIndex:[sender tag]]);
     
-    NSLog(@"%@", self.entry);
+    NSLog(@"%@", self.collection);
     
     NSInteger row = [sender tag];
     NSDictionary *obj = [self.searchResults objectAtIndex:row];
-    
-    CCCoreDataStack *stack = [CCCoreDataStack defaultStack];
 
-    Collection *collection = self.entry;
-    
-    Comic *comic = [NSEntityDescription insertNewObjectForEntityForName:@"Comic" inManagedObjectContext:stack.managedObjectContext];
+
+    Collection *collection = self.collection;
+
+    Comic *comic = [[Comic alloc] init];
     comic.id = [obj valueForKey:@"id"];
     comic.digitalId = [obj valueForKey:@"digitalId"];
     comic.title = [obj valueForKey:@"title"];
@@ -132,10 +130,13 @@
     NSData *base64 = [data base64EncodedDataWithOptions:NSUTF8StringEncoding];
     
     comic.thumbnail = base64;
+
+    RLMRealm *realm = [RLMRealm defaultRealm];
     
-    [collection addComicsObject:comic];
-    
-    [stack saveContext];
+    [[RLMRealm defaultRealm] transactionWithBlock:^{
+        [collection.comics addObject:comic];
+        [realm addObject:comic];
+    }];
     
     
 }
@@ -149,9 +150,7 @@
 
     NSURL *url = [[NSURL alloc]initWithString: newURL];
 
-    
-    //type your URL u can use initWithFormat for placeholders
-    NSURLSession *session = [NSURLSession sharedSession];  //use NSURLSession class
+    NSURLSession *session = [NSURLSession sharedSession];
     NSMutableURLRequest *request =[[NSMutableURLRequest alloc]initWithURL:url];
 
     
@@ -160,14 +159,13 @@
         NSData *data = [[NSData alloc] initWithContentsOfURL:location];
         NSArray *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
 
-        NSLog(@"%@", [responseDictionary objectAtIndex:0]);
         self.searchResults = [responseDictionary objectAtIndex:0];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
     }];
-    [task resume]; // to start the download task
+    [task resume];
     
 }
 

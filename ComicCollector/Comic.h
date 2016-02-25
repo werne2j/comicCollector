@@ -6,14 +6,15 @@
 //  Copyright © 2016 Jacob Wernette. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
+#import <Realm/Realm.h>
 
-@interface Comic : NSManagedObject
+@interface Comic : RLMObject
 
-@property (nullable, nonatomic, retain) NSNumber *id;
-@property (nullable, nonatomic, retain) NSNumber *digitalId;
-@property (nullable, nonatomic, retain) NSString *title;
-@property (nullable, nonatomic, retain) NSString *comicDescription;
-@property (nullable, nonatomic, retain) NSData *thumbnail;
+@property NSNumber<RLMInt> *id;
+@property NSNumber<RLMInt> *digitalId;
+@property NSString *title;
+@property NSString *comicDescription;
+@property NSData *thumbnail;
 
 @end
+RLM_ARRAY_TYPE(Comic)

@@ -7,7 +7,9 @@
 //
 
 #import "CCCollectionDetailViewController.h"
+#import "CCItemDetailViewController.h"
 #import "LTInfiniteScrollView.h"
+
 #import "Comic.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
@@ -17,7 +19,8 @@
 @interface CCCollectionDetailViewController () <LTInfiniteScrollViewDelegate,LTInfiniteScrollViewDataSource>
 
 @property (strong, nonatomic) LTInfiniteScrollView *scrollView;
-@property (strong, nonatomic) NSArray *comicArray;
+@property (strong, nonatomic) RLMArray *comicArray;
+@property (strong, nonatomic) Comic *selectedComic;
 
 @end
 
@@ -37,19 +40,10 @@
     self.scrollView.dataSource = self;
     self.scrollView.delegate = self;
     self.scrollView.maxScrollDistance = 3;
-    
-    for (Comic *object in self.collection.comics) {
-        NSLog(@"%@", object.title);
-    }
-    
-    self.comicArray = [self.collection.comics allObjects];
-}
 
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.scrollView reloadDataWithInitialIndex:4];
+    self.comicArray = self.collection.comics;
+    
+    [self.scrollView reloadDataWithInitialIndex: [self.collection.comics count] - 1];
     CGFloat inset = [UIScreen mainScreen].bounds.size.width / 5 * 2;
     self.scrollView.contentInset = UIEdgeInsetsMake(0, inset, 0, inset);
     [self sortViews];
@@ -99,8 +93,6 @@
     snapshot.layer.shadowOffset = CGSizeMake(2.0f, 2.0f);
     snapshot.layer.shadowOpacity = .3;
     snapshot.layer.shadowPath = shadowPath.CGPath;
-    
-    NSLog(@"%@", [self.comicArray objectAtIndex:index]);
     
     Comic *comic = [self.comicArray objectAtIndex:index];
     
@@ -161,6 +153,15 @@
 
 - (void)itemSelected:(UITapGestureRecognizer *)gr {
     NSLog(@"%li", gr.view.tag);
+    
+    self.selectedComic = [self.comicArray objectAtIndex:gr.view.tag];
+    
+    [self performSegueWithIdentifier:@"comicDetail" sender:gr];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    CCItemDetailViewController *vc = [segue destinationViewController];
+    vc.comic = self.selectedComic;
 }
 
 

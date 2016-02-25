@@ -6,19 +6,30 @@
 //
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import <Realm/Realm.h>
+#import "Comic.h"
+//#import <CoreData/CoreData.h>
+//
+//@class Comic;
+//
+//NS_ASSUME_NONNULL_BEGIN
+//
+//@interface Collection : NSManagedObject
+//
+//// Insert code here to declare functionality of your managed object subclass
+//
+//@end
+//
+//NS_ASSUME_NONNULL_END
+//
+//#import "Collection+CoreDataProperties.h"
 
-@class Comic;
+@interface Collection : RLMObject
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface Collection : NSManagedObject
-
-// Insert code here to declare functionality of your managed object subclass
+@property NSString *id;
+@property NSString *name;
+@property NSString *collectionDescription;
+@property NSDate *dateCreated;
+@property RLMArray<Comic *><Comic> *comics;
 
 @end
-
-NS_ASSUME_NONNULL_END
-
-#import "Collection+CoreDataProperties.h"

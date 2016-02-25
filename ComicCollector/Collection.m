@@ -7,10 +7,21 @@
 //
 
 #import "Collection.h"
-#import "Comic.h"
 
 @implementation Collection
 
-// Insert code here to add functionality to your managed object subclass
++ (NSString *)primaryKey
+{
+    return @"id";
+}
+
++ (NSDictionary *)defaultPropertyValues
+{
+    return @{ @"id" : [[NSUUID UUID] UUIDString],
+              @"name" : @"",
+              @"collectionDescription" : @"",
+              @"dateCreated" : [NSDate date]
+            };
+}
 
 @end

@@ -11,6 +11,6 @@
 
 @interface CCItemTypeViewController : UIViewController
 
-@property (nonatomic, strong) Collection *entry;
+@property (nonatomic, strong) Collection *collection;
 
 @end

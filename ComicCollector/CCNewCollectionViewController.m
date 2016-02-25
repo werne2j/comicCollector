@@ -5,11 +5,12 @@
 //  Created by Jacob Wernette on 2/9/16.
 //  Copyright © 2016 Jacob Wernette. All rights reserved.
 //
+#import <RBQFetchedResultsController/RBQFRC.h>
 
 #import "CCNewCollectionViewController.h"
 #import "CCAddItemsTableViewController.h"
 #import "CCItemTypeViewController.h"
-#import "CCCoreDataStack.h"
+
 #import "Collection.h"
 
 @interface CCNewCollectionViewController ()
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *insertCollectionButton;
+@property (nonatomic, strong) Collection *collection;
 
 @end
 
@@ -59,25 +61,21 @@
 }
 
 - (IBAction)insertCollection:(id)sender {
-    
-    CCCoreDataStack *stack = [CCCoreDataStack defaultStack];
 
-    self.entry = [NSEntityDescription insertNewObjectForEntityForName:@"Collection" inManagedObjectContext:stack.managedObjectContext];
     
-    self.entry.name = self.nameField.text;
-    self.entry.collectionDescription = self.descriptionField.text;
+    self.collection = [[Collection alloc] init];
+    self.collection.name = self.nameField.text;
+    self.collection.collectionDescription = self.descriptionField.text;
     
-    [self.entry setDateCreated:[NSDate date]];
     
-    [stack saveContext];
-    
-    //CCAddItemsTableViewController *vc = [[CCAddItemsTableViewController alloc] init];
-    
-    //[self.navigationController pushViewController:vc animated:YES];
-    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+
+    [[RLMRealm defaultRealm] transactionWithBlock:^{
+        [realm addObjectWithNotification:self.collection];
+    }];
+
     [self performSegueWithIdentifier:@"selectItemType" sender:sender];
-    
-    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+
     
 }
 
@@ -91,11 +89,8 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     CCItemTypeViewController *vc = [segue destinationViewController];
-    NSLog(@"%@", self.entry);
-    vc.entry = self.entry;
+    vc.collection = self.collection;
     
 }
 

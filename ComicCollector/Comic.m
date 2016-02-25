@@ -10,10 +10,19 @@
 
 @implementation Comic
 
-@dynamic id;
-@dynamic digitalId;
-@dynamic title;
-@dynamic comicDescription;
-@dynamic thumbnail;
++ (NSString *)primaryKey
+{
+    return @"id";
+}
+
++ (NSDictionary *)defaultPropertyValues
+{
+    return @{ @"id" : @0,
+              @"digitalId" : @0,
+              @"title" : @"",
+              @"comicDescription" : @""
+            };
+}
 
 @end
+

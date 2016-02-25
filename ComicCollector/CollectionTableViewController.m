@@ -5,17 +5,17 @@
 //  Created by Jacob Wernette on 2/9/16.
 //  Copyright © 2016 Jacob Wernette. All rights reserved.
 //
+#import <RBQFetchedResultsController/RBQFRC.h>
 
 #import "CollectionTableViewController.h"
 #import "CCNewCollectionViewController.h"
 #import "CCCollectionDetailViewController.h"
-#import "CCCoreDataStack.h"
+
 #import "Comic.h"
-#import <CoreData/CoreData.h>
 
-@interface CollectionTableViewController () <NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface CollectionTableViewController () <RBQFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) RBQFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -27,7 +27,7 @@
     
     [self setup];
     
-    [self.fetchedResultsController performFetch:nil];
+    [self.fetchedResultsController performFetch];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Collections" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
@@ -50,7 +50,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_fetchedResultsController.fetchedObjects count];
+    return [self.fetchedResultsController numberOfRowsForSectionIndex:section];
 }
 
 
@@ -62,10 +62,6 @@
 
     cell.textLabel.text = entry.name;
     cell.detailTextLabel.text = entry.collectionDescription;
-    
-    for (Comic *object in entry.comics) {
-        NSLog(@"%@", object.title);
-    }
     
     return cell;
 }
@@ -82,27 +78,22 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        CCCoreDataStack *stack = [CCCoreDataStack defaultStack];
+        Collection *collection = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        if (!collection) {
+            return;
+        }
         
-        [stack.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        
+        [realm beginWriteTransaction];
+        
+        [realm deleteObjectWithNotification:collection];
+        
+        [realm commitWriteTransaction];
         
     }   
 }
 
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Navigation
 
@@ -121,73 +112,97 @@
 }
 
 
+- (RBQFetchRequest *)entryListRequest {
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    RBQFetchRequest *fetchRequest = [RBQFetchRequest fetchRequestWithEntityName:@"Collection"
+                                                                        inRealm:realm
+                                                                      predicate:nil];
+    
+    RLMSortDescriptor *sortDescriptor = [RLMSortDescriptor sortDescriptorWithProperty:@"name"
+                                                                            ascending:NO];
+    
+    fetchRequest.sortDescriptors = @[sortDescriptor];
 
-- (NSFetchRequest *)entryListRequest {
-    
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Collection"];
-    
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO]];
-    
     return fetchRequest;
 }
 
-- (NSFetchedResultsController *)fetchedResultsController {
+- (RBQFetchedResultsController *)fetchedResultsController {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
     
-    CCCoreDataStack *coreDataStack = [CCCoreDataStack defaultStack];
-    NSFetchRequest *fetchRequest = [self entryListRequest];
+    RBQFetchRequest *fetchRequest = [self entryListRequest];
     
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
-    
+    _fetchedResultsController = [[RBQFetchedResultsController alloc] initWithFetchRequest:fetchRequest sectionNameKeyPath:nil cacheName:nil];
     _fetchedResultsController.delegate = self;
-    
+
     return _fetchedResultsController;
 }
 
--(void) controllerWillChangeContent:(NSFetchedResultsController *)controller {
+
+#pragma mark - <RBQFetchedResultsControllerDelegate>
+
+- (void)controllerWillChangeContent:(RBQFetchedResultsController *)controller
+{
+    NSLog(@"Beginning updates");
     [self.tableView beginUpdates];
 }
 
--(void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
+- (void)controllerDidChangeContent:(RBQFetchedResultsController *)controller
+{
+    NSLog(@"Ending updates");
     [self.tableView endUpdates];
 }
 
--(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
-    
+- (void)controller:(RBQFetchedResultsController *)controller didChangeObject:(RBQSafeRealmObject *)anObject atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+{
     UITableView *tableView = self.tableView;
     
-    switch (type) {
+    switch(type) {
+            
         case NSFetchedResultsChangeInsert:
-            
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            
+        {
+            NSLog(@"Inserting at path %@", newIndexPath);
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
             break;
-            
-        case NSFetchedResultsChangeDelete:
-            
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            
-            break;
-            
-        case NSFetchedResultsChangeUpdate: {
-
-            Collection *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            cell.textLabel.text = entry.name;
-            cell.detailTextLabel.text = entry.collectionDescription;
-            
         }
+        case NSFetchedResultsChangeDelete:
+        {
+            NSLog(@"Deleting at path %ld", (long)indexPath.row);
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
             break;
-            
+        }
+        case NSFetchedResultsChangeUpdate:
+        {
+            NSLog(@"Updating at path %@", indexPath);
+            if ([[tableView indexPathsForVisibleRows] containsObject:indexPath]) {
+                [tableView reloadRowsAtIndexPaths:@[indexPath]
+                                 withRowAnimation:UITableViewRowAnimationFade];
+            }
+            break;
+        }
         case NSFetchedResultsChangeMove:
-            
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            
+            NSLog(@"Moving from path %@ to %@", indexPath, newIndexPath);
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
+}
+
+
+- (void)controller:(RBQFetchedResultsController *)controller
+  didChangeSection:(RBQFetchedResultsSectionInfo *)sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type
+{
+    // butts
 }
 
 @end
