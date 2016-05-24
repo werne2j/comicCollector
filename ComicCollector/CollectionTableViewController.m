@@ -86,9 +86,7 @@
         RLMRealm *realm = [RLMRealm defaultRealm];
         
         [realm beginWriteTransaction];
-        
         [realm deleteObject:collection];
-        
         [realm commitWriteTransaction];
         
     }   
