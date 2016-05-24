@@ -1,13 +1,13 @@
 PODS:
-  - LTInfiniteScrollView (4.1.0)
-  - RBQFetchedResultsController (3.0):
-    - Realm (>= 0.95)
-  - Realm (0.98.2):
-    - Realm/Headers (= 0.98.2)
-  - Realm/Headers (0.98.2)
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
+  - LTInfiniteScrollView (4.3.2)
+  - RBQFetchedResultsController (4.0.3):
+    - Realm (>= 0.99.1)
+  - Realm (0.103.1):
+    - Realm/Headers (= 0.103.1)
+  - Realm/Headers (0.103.1)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
 
 DEPENDENCIES:
   - LTInfiniteScrollView (~> 4.1)
@@ -16,9 +16,11 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
-  LTInfiniteScrollView: 8bd6cbd02ed23ecab46a219e4647daa615bcd445
-  RBQFetchedResultsController: d94374941a05193fd7ab55624ee95272e4e5d315
-  Realm: 88a147fe04b8f07191a676b15c779b2b448991de
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  LTInfiniteScrollView: 6ce2fcaf6d030a9e45a164ba9dcdb1b325a30d03
+  RBQFetchedResultsController: fcc29d033acb7875af5c85976bd4f1ddb4ff75bc
+  Realm: 9ed57109332e95bdc48a7caedff80b70c51d5ef4
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: d29e21969895d33f924b5411fe31ce91956c4e96
+
+COCOAPODS: 1.0.0

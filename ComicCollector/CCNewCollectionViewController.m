@@ -71,7 +71,7 @@
     RLMRealm *realm = [RLMRealm defaultRealm];
 
     [[RLMRealm defaultRealm] transactionWithBlock:^{
-        [realm addObjectWithNotification:self.collection];
+        [realm addObject:self.collection];
     }];
 
     [self performSegueWithIdentifier:@"selectItemType" sender:sender];

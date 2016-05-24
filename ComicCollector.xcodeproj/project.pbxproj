@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E3B07C314420D11B5A493A3 /* libPods-ComicCollector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA62B542911B6618F5EE6AD /* libPods-ComicCollector.a */; };
+		2763CB999BDAE097A21E8DB0 /* libPods-ComicCollector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6237BBF8E7F7CC5B82757B5 /* libPods-ComicCollector.a */; };
 		BB82F48A1C6D6F8D007D6701 /* CCAddItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */; };
 		BB82F48D1C6D89FE007D6701 /* CCCustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F48C1C6D89FE007D6701 /* CCCustomSearchBar.m */; };
 		BB82F4901C6D8C8C007D6701 /* CCCustomSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F48F1C6D8C8C007D6701 /* CCCustomSearchViewController.m */; };
@@ -27,9 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1EA62B542911B6618F5EE6AD /* libPods-ComicCollector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComicCollector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		762508E850E0D4061614D1F5 /* Pods-ComicCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComicCollector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComicCollector/Pods-ComicCollector.debug.xcconfig"; sourceTree = "<group>"; };
-		A9E9B665A7A96A8EB0CC5D57 /* Pods-ComicCollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComicCollector.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComicCollector/Pods-ComicCollector.release.xcconfig"; sourceTree = "<group>"; };
+		B6237BBF8E7F7CC5B82757B5 /* libPods-ComicCollector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComicCollector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B93226F2DCE778328845B7A0 /* Pods-ComicCollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComicCollector.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComicCollector/Pods-ComicCollector.release.xcconfig"; sourceTree = "<group>"; };
 		BB82F4881C6D6F8D007D6701 /* CCAddItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddItemsTableViewController.h; sourceTree = "<group>"; };
 		BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddItemsTableViewController.m; sourceTree = "<group>"; };
 		BB82F48B1C6D89FE007D6701 /* CCCustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCustomSearchBar.h; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		BBF8F5C31C6EDA9700743491 /* CCTypeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTypeButton.m; sourceTree = "<group>"; };
 		BBF8F5C81C6EEB8300743491 /* CCCollectionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollectionDetailViewController.h; sourceTree = "<group>"; };
 		BBF8F5C91C6EEB8300743491 /* CCCollectionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollectionDetailViewController.m; sourceTree = "<group>"; };
+		FBD9A2DEB52B1B3C8783C607 /* Pods-ComicCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComicCollector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComicCollector/Pods-ComicCollector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,18 +67,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E3B07C314420D11B5A493A3 /* libPods-ComicCollector.a in Frameworks */,
+				2763CB999BDAE097A21E8DB0 /* libPods-ComicCollector.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AAE4AEC1C0CACB805930EA37 /* Pods */ = {
+		40AC7A429503AFE640D511A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				762508E850E0D4061614D1F5 /* Pods-ComicCollector.debug.xcconfig */,
-				A9E9B665A7A96A8EB0CC5D57 /* Pods-ComicCollector.release.xcconfig */,
+				FBD9A2DEB52B1B3C8783C607 /* Pods-ComicCollector.debug.xcconfig */,
+				B93226F2DCE778328845B7A0 /* Pods-ComicCollector.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -88,8 +88,8 @@
 			children = (
 				BBEA86C11C6978C500C6B553 /* ComicCollector */,
 				BBEA86C01C6978C500C6B553 /* Products */,
-				AAE4AEC1C0CACB805930EA37 /* Pods */,
-				F31B8AB2D61FD6ABA4C3C9D0 /* Frameworks */,
+				40AC7A429503AFE640D511A0 /* Pods */,
+				F2BC493A176945AEEA7EC320 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,10 +177,10 @@
 			name = Item;
 			sourceTree = "<group>";
 		};
-		F31B8AB2D61FD6ABA4C3C9D0 /* Frameworks */ = {
+		F2BC493A176945AEEA7EC320 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1EA62B542911B6618F5EE6AD /* libPods-ComicCollector.a */,
+				B6237BBF8E7F7CC5B82757B5 /* libPods-ComicCollector.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,12 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBEA86D91C6978C500C6B553 /* Build configuration list for PBXNativeTarget "ComicCollector" */;
 			buildPhases = (
-				27F9532D6CF4BCA45D008A88 /* Check Pods Manifest.lock */,
+				129E224C689A32F0BEEF56B0 /* 📦 Check Pods Manifest.lock */,
 				BBEA86BB1C6978C500C6B553 /* Sources */,
 				BBEA86BC1C6978C500C6B553 /* Frameworks */,
 				BBEA86BD1C6978C500C6B553 /* Resources */,
-				573B70C6410C92F4B0103544 /* Embed Pods Frameworks */,
-				D8F92FC0C7677E34323D779C /* Copy Pods Resources */,
+				891837AAC19822772595CBED /* 📦 Embed Pods Frameworks */,
+				C06403AA4CBA57ADD6B1A788 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,14 +260,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		27F9532D6CF4BCA45D008A88 /* Check Pods Manifest.lock */ = {
+		129E224C689A32F0BEEF56B0 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,14 +275,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		573B70C6410C92F4B0103544 /* Embed Pods Frameworks */ = {
+		891837AAC19822772595CBED /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,14 +290,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ComicCollector/Pods-ComicCollector-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D8F92FC0C7677E34323D779C /* Copy Pods Resources */ = {
+		C06403AA4CBA57ADD6B1A788 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -416,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -426,7 +426,7 @@
 		};
 		BBEA86DA1C6978C500C6B553 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 762508E850E0D4061614D1F5 /* Pods-ComicCollector.debug.xcconfig */;
+			baseConfigurationReference = FBD9A2DEB52B1B3C8783C607 /* Pods-ComicCollector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -436,12 +436,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = werne2j.ComicCollector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		BBEA86DB1C6978C500C6B553 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9E9B665A7A96A8EB0CC5D57 /* Pods-ComicCollector.release.xcconfig */;
+			baseConfigurationReference = B93226F2DCE778328845B7A0 /* Pods-ComicCollector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -451,6 +452,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = werne2j.ComicCollector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

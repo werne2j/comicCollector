@@ -87,7 +87,7 @@
         
         [realm beginWriteTransaction];
         
-        [realm deleteObjectWithNotification:collection];
+        [realm deleteObject:collection];
         
         [realm commitWriteTransaction];
         
