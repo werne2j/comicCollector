@@ -144,7 +144,7 @@
 
 - (void) search:(NSString *)q {
 
-    NSString *urlString = [@"http://104.236.118.99/api/items/search/" stringByAppendingString:q];
+    NSString *urlString = [@"http://localhost:3000/api/items/search/" stringByAppendingString:q];
     
     NSString *newURL = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 

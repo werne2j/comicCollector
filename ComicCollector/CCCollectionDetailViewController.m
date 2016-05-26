@@ -123,12 +123,14 @@
     // adjust z-index of each views
     [self sortViews];
     
+    NSLog(@"%f", progress);
+    
     // alpha
     CGFloat alpha = 1;
     if (progress >= 0) {
         alpha = 1;
     } else {
-        alpha = 1 - fabs(progress) * 0.15;
+        alpha = 1 - fabs(progress) * 0.25;
     }
     view.alpha = alpha;
     
@@ -136,17 +138,19 @@
     CGAffineTransform transform = CGAffineTransformIdentity;
     
     // scale
-    CGFloat scale = 1 + (progress) * 0.03;
+    CGFloat scale = 1 + (progress) * 0.05;
     transform = CGAffineTransformScale(transform, scale, scale);
     
     // translation
     CGFloat translation = 0;
-    if (progress > 0) {
+    if (progress == 0) {
         translation = fabs(progress) * SCREEN_WIDTH / 3;
+    } else if (progress > 0){
+        translation = fabs(progress) * SCREEN_WIDTH / 2;
     } else {
         translation = fabs(progress) * SCREEN_WIDTH / 10;
     }
-    
+
     transform = CGAffineTransformTranslate(transform, translation, 0);
     view.transform = transform;
 }
