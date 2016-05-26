@@ -54,12 +54,10 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
     [self.searchController setActive:YES];
 }
 
 - (void) dismissAddItems {
-    
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -98,19 +96,12 @@
     [contactAddButton addTarget:self action:@selector(addItem:) forControlEvents:UIControlEventTouchUpInside];
     cell.accessoryView = contactAddButton;
     
-    
     return cell;
 }
 
 - (void)addItem:(id)sender {
-    NSLog(@"%ld", (long)[sender tag]);
-    NSLog(@"%@", [self.searchResults objectAtIndex:[sender tag]]);
-    
-    NSLog(@"%@", self.collection);
-    
     NSInteger row = [sender tag];
     NSDictionary *obj = [self.searchResults objectAtIndex:row];
-
 
     Collection *collection = self.collection;
 
@@ -137,7 +128,6 @@
         [collection.comics addObject:comic];
         [realm addObject:comic];
     }];
-    
     
 }
 

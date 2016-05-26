@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     self.navigationItem.hidesBackButton = YES;
 }
 
@@ -45,9 +45,7 @@
 
 
 - (IBAction)presentSearch:(id)sender {
-    
     [self performSegueWithIdentifier:@"itemSearchSegue" sender:sender];
-    
 }
 
 @end

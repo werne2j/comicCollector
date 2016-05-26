@@ -62,11 +62,9 @@
 
 - (IBAction)insertCollection:(id)sender {
 
-    
     self.collection = [[Collection alloc] init];
     self.collection.name = self.nameField.text;
     self.collection.collectionDescription = self.descriptionField.text;
-    
     
     RLMRealm *realm = [RLMRealm defaultRealm];
 
@@ -76,11 +74,9 @@
 
     [self performSegueWithIdentifier:@"selectItemType" sender:sender];
 
-    
 }
 
 - (IBAction)editingChanged:(UITextField *)sender {
-    
     self.insertCollectionButton.enabled = sender.text.length > 0;
 }
 
@@ -91,8 +87,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     CCItemTypeViewController *vc = [segue destinationViewController];
     vc.collection = self.collection;
-    
 }
-
 
 @end

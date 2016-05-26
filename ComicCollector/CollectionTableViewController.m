@@ -144,13 +144,11 @@
 
 - (void)controllerWillChangeContent:(RBQFetchedResultsController *)controller
 {
-    NSLog(@"Beginning updates");
     [self.tableView beginUpdates];
 }
 
 - (void)controllerDidChangeContent:(RBQFetchedResultsController *)controller
 {
-    NSLog(@"Ending updates");
     [self.tableView endUpdates];
 }
 
@@ -163,21 +161,21 @@
             
         case NSFetchedResultsChangeInsert:
         {
-            NSLog(@"Inserting at path %@", newIndexPath);
+            // Inserting at path
             [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
             break;
         }
         case NSFetchedResultsChangeDelete:
         {
-            NSLog(@"Deleting at path %ld", (long)indexPath.row);
+            // Deleting at path
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
             break;
         }
         case NSFetchedResultsChangeUpdate:
         {
-            NSLog(@"Updating at path %@", indexPath);
+            // Updating at path
             if ([[tableView indexPathsForVisibleRows] containsObject:indexPath]) {
                 [tableView reloadRowsAtIndexPaths:@[indexPath]
                                  withRowAnimation:UITableViewRowAnimationFade];
@@ -185,7 +183,7 @@
             break;
         }
         case NSFetchedResultsChangeMove:
-            NSLog(@"Moving from path %@ to %@", indexPath, newIndexPath);
+            // Moving to another path
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
             [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]

@@ -123,8 +123,6 @@
     // adjust z-index of each views
     [self sortViews];
     
-    NSLog(@"%f", progress);
-    
     // alpha
     CGFloat alpha = 1;
     if (progress >= 0) {
@@ -156,8 +154,6 @@
 }
 
 - (void)itemSelected:(UITapGestureRecognizer *)gr {
-    NSLog(@"%li", gr.view.tag);
-    
     self.selectedComic = [self.comicArray objectAtIndex:gr.view.tag];
     
     [self performSegueWithIdentifier:@"comicDetail" sender:gr];
