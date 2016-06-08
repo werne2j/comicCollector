@@ -121,12 +121,33 @@
     NSData *base64 = [data base64EncodedDataWithOptions:NSUTF8StringEncoding];
     
     comic.thumbnail = base64;
-
+    
     RLMRealm *realm = [RLMRealm defaultRealm];
     
+//    if comic id exists
+//        add id to array
+//    else
+//        create comic
+//        add to array
+    
+//    Comic *c = [Comic objectForPrimaryKey:@"id"];
+//    if (!c) {
+//        [realm addObject:comic];
+//    }
+//    
+//    ComicID *comicID = [[ComicID alloc] init];
+//    comicID.id = comic.id;
+//    [collection.comics addObject:comicID];
+    
     [[RLMRealm defaultRealm] transactionWithBlock:^{
-        [collection.comics addObject:comic];
-        [realm addObject:comic];
+        Comic *c = [Comic objectForPrimaryKey:comic.id];
+        if (!c) {
+            [realm addObject:comic];
+        }
+        
+        ComicID *comicID = [[ComicID alloc] init];
+        comicID.id = comic.id;
+        [collection.comics addObject:comicID];
     }];
     
 }

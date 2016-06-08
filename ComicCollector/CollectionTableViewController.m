@@ -32,6 +32,13 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Collections" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
+    [self.navigationController.navigationBar setBackgroundImage:nil
+                                                  forBarMetrics:UIBarMetricsDefault];
+}
+
 -(void)setup {
     self.title =  @"Comic Collector";
 

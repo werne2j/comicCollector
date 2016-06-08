@@ -7,7 +7,7 @@
 //
 
 #import <Realm/Realm.h>
-#import "Comic.h"
+#import "ComicID.h"
 
 @interface Collection : RLMObject
 
@@ -15,6 +15,6 @@
 @property NSString *name;
 @property NSString *collectionDescription;
 @property NSDate *dateCreated;
-@property RLMArray<Comic *><Comic> *comics;
+@property RLMArray<ComicID *><ComicID> *comics;
 
 @end

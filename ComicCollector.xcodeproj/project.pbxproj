@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2763CB999BDAE097A21E8DB0 /* libPods-ComicCollector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6237BBF8E7F7CC5B82757B5 /* libPods-ComicCollector.a */; };
+		BB7EFB861D07AE310047D5DC /* ComicID.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7EFB851D07AE310047D5DC /* ComicID.m */; };
 		BB82F48A1C6D6F8D007D6701 /* CCAddItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */; };
 		BB82F48D1C6D89FE007D6701 /* CCCustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F48C1C6D89FE007D6701 /* CCCustomSearchBar.m */; };
 		BB82F4901C6D8C8C007D6701 /* CCCustomSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82F48F1C6D8C8C007D6701 /* CCCustomSearchViewController.m */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		B6237BBF8E7F7CC5B82757B5 /* libPods-ComicCollector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComicCollector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93226F2DCE778328845B7A0 /* Pods-ComicCollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComicCollector.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComicCollector/Pods-ComicCollector.release.xcconfig"; sourceTree = "<group>"; };
+		BB7EFB841D07AE310047D5DC /* ComicID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicID.h; sourceTree = "<group>"; };
+		BB7EFB851D07AE310047D5DC /* ComicID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicID.m; sourceTree = "<group>"; };
 		BB82F4881C6D6F8D007D6701 /* CCAddItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddItemsTableViewController.h; sourceTree = "<group>"; };
 		BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddItemsTableViewController.m; sourceTree = "<group>"; };
 		BB82F48B1C6D89FE007D6701 /* CCCustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCustomSearchBar.h; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				BBD35C6C1C755FBF00B68427 /* Collection.m */,
 				BBD35C5F1C754B5900B68427 /* Comic.h */,
 				BBD35C601C754B5900B68427 /* Comic.m */,
+				BB7EFB841D07AE310047D5DC /* ComicID.h */,
+				BB7EFB851D07AE310047D5DC /* ComicID.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB7EFB861D07AE310047D5DC /* ComicID.m in Sources */,
 				BBF8F5C41C6EDA9700743491 /* CCTypeButton.m in Sources */,
 				BBF8F5C11C6ED9B300743491 /* CCItemTypeViewController.m in Sources */,
 				BB82F48D1C6D89FE007D6701 /* CCCustomSearchBar.m in Sources */,

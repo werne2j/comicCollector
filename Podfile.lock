@@ -1,5 +1,5 @@
 PODS:
-  - LTInfiniteScrollView (4.3.2)
+  - LTInfiniteScrollView (4.1.0)
   - RBQFetchedResultsController (4.0.3):
     - Realm (>= 0.99.1)
   - Realm (1.0.0):
@@ -10,17 +10,17 @@ PODS:
   - SDWebImage/Core (3.7.6)
 
 DEPENDENCIES:
-  - LTInfiniteScrollView (~> 4.1)
+  - LTInfiniteScrollView (= 4.1)
   - RBQFetchedResultsController
   - Realm
   - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
-  LTInfiniteScrollView: 6ce2fcaf6d030a9e45a164ba9dcdb1b325a30d03
+  LTInfiniteScrollView: 8bd6cbd02ed23ecab46a219e4647daa615bcd445
   RBQFetchedResultsController: fcc29d033acb7875af5c85976bd4f1ddb4ff75bc
   Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
 
-PODFILE CHECKSUM: d29e21969895d33f924b5411fe31ce91956c4e96
+PODFILE CHECKSUM: 3af0f9b4d35f9d7b1f1f6742687cb6e866633856
 
 COCOAPODS: 1.0.0

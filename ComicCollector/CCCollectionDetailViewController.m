@@ -19,7 +19,7 @@
 @interface CCCollectionDetailViewController () <LTInfiniteScrollViewDelegate,LTInfiniteScrollViewDataSource>
 
 @property (strong, nonatomic) LTInfiniteScrollView *scrollView;
-@property (strong, nonatomic) RLMArray *comicArray;
+@property (strong, nonatomic) RLMResults *comicArray;
 @property (strong, nonatomic) Comic *selectedComic;
 
 @end
@@ -33,6 +33,10 @@
     
     self.title =  self.collection.name;
     
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    
     // Do any additional setup after loading the view.
     self.scrollView = [[LTInfiniteScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     [self.view addSubview:self.scrollView];
@@ -41,13 +45,19 @@
     self.scrollView.delegate = self;
     self.scrollView.maxScrollDistance = 3;
 
-    self.comicArray = self.collection.comics;
+    NSArray *arr = [self.collection.comics valueForKey:@"id"];
+    
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"id IN %@", arr];
+    RLMResults<Comic *> *comarr = [Comic objectsWithPredicate:pred];
+
+    self.comicArray = comarr;
     
     [self.scrollView reloadDataWithInitialIndex: [self.collection.comics count] - 1];
     CGFloat inset = [UIScreen mainScreen].bounds.size.width / 5 * 2;
     self.scrollView.contentInset = UIEdgeInsetsMake(0, inset, 0, inset);
     [self sortViews];
 }
+
 
 - (void)sortViews
 {
