@@ -22,8 +22,6 @@
 		BBEA86C71C6978C500C6B553 /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEA86C61C6978C500C6B553 /* CCAppDelegate.m */; };
 		BBEA86D21C6978C500C6B553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBEA86D11C6978C500C6B553 /* Assets.xcassets */; };
 		BBEA86D51C6978C500C6B553 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEA86D31C6978C500C6B553 /* LaunchScreen.storyboard */; };
-		BBF8F5C11C6ED9B300743491 /* CCItemTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF8F5C01C6ED9B300743491 /* CCItemTypeViewController.m */; };
-		BBF8F5C41C6EDA9700743491 /* CCTypeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF8F5C31C6EDA9700743491 /* CCTypeButton.m */; };
 		BBF8F5CA1C6EEB8300743491 /* CCCollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF8F5C91C6EEB8300743491 /* CCCollectionDetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -56,10 +54,6 @@
 		BBEA86D11C6978C500C6B553 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBEA86D41C6978C500C6B553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBEA86D61C6978C500C6B553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BBF8F5BF1C6ED9B300743491 /* CCItemTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCItemTypeViewController.h; sourceTree = "<group>"; };
-		BBF8F5C01C6ED9B300743491 /* CCItemTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCItemTypeViewController.m; sourceTree = "<group>"; };
-		BBF8F5C21C6EDA9700743491 /* CCTypeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTypeButton.h; sourceTree = "<group>"; };
-		BBF8F5C31C6EDA9700743491 /* CCTypeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTypeButton.m; sourceTree = "<group>"; };
 		BBF8F5C81C6EEB8300743491 /* CCCollectionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollectionDetailViewController.h; sourceTree = "<group>"; };
 		BBF8F5C91C6EEB8300743491 /* CCCollectionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollectionDetailViewController.m; sourceTree = "<group>"; };
 		FBD9A2DEB52B1B3C8783C607 /* Pods-ComicCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComicCollector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComicCollector/Pods-ComicCollector.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,12 +166,8 @@
 			children = (
 				BB82F4881C6D6F8D007D6701 /* CCAddItemsTableViewController.h */,
 				BB82F4891C6D6F8D007D6701 /* CCAddItemsTableViewController.m */,
-				BBF8F5BF1C6ED9B300743491 /* CCItemTypeViewController.h */,
-				BBF8F5C01C6ED9B300743491 /* CCItemTypeViewController.m */,
 				BBC141CF1C7D3DAB00287889 /* CCItemDetailViewController.h */,
 				BBC141D01C7D3DAB00287889 /* CCItemDetailViewController.m */,
-				BBF8F5C21C6EDA9700743491 /* CCTypeButton.h */,
-				BBF8F5C31C6EDA9700743491 /* CCTypeButton.m */,
 			);
 			name = Item;
 			sourceTree = "<group>";
@@ -318,8 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB7EFB861D07AE310047D5DC /* ComicID.m in Sources */,
-				BBF8F5C41C6EDA9700743491 /* CCTypeButton.m in Sources */,
-				BBF8F5C11C6ED9B300743491 /* CCItemTypeViewController.m in Sources */,
 				BB82F48D1C6D89FE007D6701 /* CCCustomSearchBar.m in Sources */,
 				BB82F48A1C6D6F8D007D6701 /* CCAddItemsTableViewController.m in Sources */,
 				BBEA86C71C6978C500C6B553 /* CCAppDelegate.m in Sources */,

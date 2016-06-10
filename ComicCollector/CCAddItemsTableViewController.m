@@ -16,7 +16,6 @@
 @interface CCAddItemsTableViewController () <UISearchBarDelegate, UISearchResultsUpdating>
 
 @property (nonatomic, strong) CCCustomSearchViewController *searchController;
-
 @property (nonatomic, strong) NSArray *searchResults;
 
 @end
@@ -58,6 +57,9 @@
 }
 
 - (void) dismissAddItems {
+    if([self.myDelegate respondsToSelector:@selector(additemsDismissed:)]) {
+        [self.myDelegate additemsDismissed:self.collection];
+    }
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -124,21 +126,6 @@
     
     RLMRealm *realm = [RLMRealm defaultRealm];
     
-//    if comic id exists
-//        add id to array
-//    else
-//        create comic
-//        add to array
-    
-//    Comic *c = [Comic objectForPrimaryKey:@"id"];
-//    if (!c) {
-//        [realm addObject:comic];
-//    }
-//    
-//    ComicID *comicID = [[ComicID alloc] init];
-//    comicID.id = comic.id;
-//    [collection.comics addObject:comicID];
-    
     [[RLMRealm defaultRealm] transactionWithBlock:^{
         Comic *c = [Comic objectForPrimaryKey:comic.id];
         if (!c) {
@@ -156,14 +143,11 @@
 - (void) search:(NSString *)q {
 
     NSString *urlString = [@"http://localhost:3000/api/items/search/" stringByAppendingString:q];
-    
     NSString *newURL = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-
     NSURL *url = [[NSURL alloc]initWithString: newURL];
 
     NSURLSession *session = [NSURLSession sharedSession];
     NSMutableURLRequest *request =[[NSMutableURLRequest alloc]initWithURL:url];
-
     
     NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
 

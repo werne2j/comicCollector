@@ -8,6 +8,7 @@
 
 #import "CCCollectionDetailViewController.h"
 #import "CCItemDetailViewController.h"
+#import "CCAddItemsTableViewController.h"
 #import "LTInfiniteScrollView.h"
 
 #import "Comic.h"
@@ -16,7 +17,7 @@
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define COLOR [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1]
 
-@interface CCCollectionDetailViewController () <LTInfiniteScrollViewDelegate,LTInfiniteScrollViewDataSource>
+@interface CCCollectionDetailViewController () <LTInfiniteScrollViewDelegate,LTInfiniteScrollViewDataSource,AddItemDelegate>
 
 @property (strong, nonatomic) LTInfiniteScrollView *scrollView;
 @property (strong, nonatomic) RLMResults *comicArray;
@@ -169,9 +170,35 @@
     [self performSegueWithIdentifier:@"comicDetail" sender:gr];
 }
 
+- (IBAction)addItem:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"addItemSegue" sender:sender];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    CCItemDetailViewController *vc = [segue destinationViewController];
-    vc.comic = self.selectedComic;
+    if ([segue.identifier  isEqual: @"comicDetail"]) {
+        CCItemDetailViewController *vc = [segue destinationViewController];
+        vc.comic = self.selectedComic;
+    } else if([segue.identifier isEqual:@"addItemSegue"]) {
+        UINavigationController *nc = [segue destinationViewController];
+        CCAddItemsTableViewController *vc = (CCAddItemsTableViewController *)nc.topViewController;
+        vc.myDelegate = self;
+        vc.collection = self.collection;
+    }
+}
+
+#pragma mark - Add Items Dismissed delegate methods
+
+- (void)additemsDismissed:(Collection *)collection {
+    self.collection = collection;
+    
+    NSArray *arr = [self.collection.comics valueForKey:@"id"];
+    
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"id IN %@", arr];
+    RLMResults<Comic *> *comarr = [Comic objectsWithPredicate:pred];
+    
+    self.comicArray = comarr;
+    
+    [self.scrollView reloadDataWithInitialIndex: [self.collection.comics count] - 1];
 }
 
 

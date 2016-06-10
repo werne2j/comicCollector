@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="W2c-eM-XGI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="W2c-eM-XGI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -35,7 +35,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1on-99-w5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="1235"/>
+            <point key="canvasLocation" x="1078" y="1496"/>
         </scene>
         <!--Collection Table View Controller-->
         <scene sceneID="Z7q-vt-MCl">
@@ -106,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="1078" y="434"/>
         </scene>
-        <!--Collection Detail View Controller-->
+        <!--Title-->
         <scene sceneID="HGi-gT-OAq">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="Y0F-Mu-Cer" customClass="CCCollectionDetailViewController" sceneMemberID="viewController">
@@ -119,13 +119,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="m03-Do-zXi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wZq-sX-jBj">
+                            <connections>
+                                <action selector="addItem:" destination="Y0F-Mu-Cer" id="oac-TC-KSO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="gF8-0u-yD8" kind="presentation" identifier="comicDetail" id="8gk-jT-h4k"/>
+                        <segue destination="uYR-pR-5Sy" kind="presentation" identifier="addItemSegue" id="Zmm-AX-60C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbe-mT-cK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763" y="434"/>
+            <point key="canvasLocation" x="1756" y="434"/>
         </scene>
         <!--Title-->
         <scene sceneID="yzD-ax-7Vg">
@@ -169,6 +177,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pV9-IW-4uq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2442" y="434"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZPo-CP-jhA">
+            <objects>
+                <navigationController id="uYR-pR-5Sy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5a1-D4-Nv9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ogK-L9-Ad0" kind="relationship" relationship="rootViewController" id="jaU-qd-n1U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cm6-kK-oNs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2442" y="1116"/>
         </scene>
         <!--New Collection View Controller-->
         <scene sceneID="iZG-fn-VXf">
@@ -231,119 +255,12 @@
                         <outlet property="descriptionField" destination="Ztq-C8-400" id="Y0u-ap-65D"/>
                         <outlet property="insertCollectionButton" destination="bfZ-H2-HQk" id="AHh-51-o7o"/>
                         <outlet property="nameField" destination="eXY-ZL-Eay" id="jKW-83-nde"/>
-                        <segue destination="Pgp-lj-mvo" kind="show" identifier="selectItemType" id="uTT-qw-Q6R"/>
+                        <segue destination="ogK-L9-Ad0" kind="show" identifier="itemSearchSegue" id="9Rl-tU-jvY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFB-yq-3xB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1794" y="1235"/>
-        </scene>
-        <!--Item Type View Controller-->
-        <scene sceneID="L2z-Fb-7xs">
-            <objects>
-                <viewController id="Pgp-lj-mvo" customClass="CCItemTypeViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xzB-h9-oew"/>
-                        <viewControllerLayoutGuide type="bottom" id="zoP-6g-oTx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="a8D-xo-q3Q">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="Klo-oy-Zno">
-                                <rect key="frame" x="150" y="250" width="300" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPD-rz-ab9" customClass="CCTypeButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.46724272150000001" green="0.92109784029999997" blue="0.4446944847" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="1LH-Zc-2Mr"/>
-                                            <constraint firstAttribute="width" constant="100" id="L0J-Li-oi3"/>
-                                        </constraints>
-                                        <state key="normal" title="Series"/>
-                                        <connections>
-                                            <action selector="presentSearch:" destination="Pgp-lj-mvo" eventType="touchUpInside" id="FXD-ui-o2g"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFe-S8-ooT" customClass="CCTypeButton">
-                                        <rect key="frame" x="200" y="0.0" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.46724272150000001" green="0.92109784029999997" blue="0.4446944847" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Mgi-40-8hA"/>
-                                            <constraint firstAttribute="height" constant="100" id="cGj-wt-hb0"/>
-                                        </constraints>
-                                        <state key="normal" title="Character"/>
-                                        <connections>
-                                            <action selector="presentSearch:" destination="Pgp-lj-mvo" eventType="touchUpInside" id="NuZ-b7-Iwj"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="vQY-pb-iej">
-                                <rect key="frame" x="150" y="102" width="300" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPz-9e-AD3" customClass="CCTypeButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.46724272150000001" green="0.92109784029999997" blue="0.4446944847" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="s8n-za-xGi"/>
-                                            <constraint firstAttribute="height" constant="100" id="y8L-gb-tLB"/>
-                                        </constraints>
-                                        <state key="normal" title="Comic"/>
-                                        <connections>
-                                            <action selector="presentSearch:" destination="Pgp-lj-mvo" eventType="touchUpInside" id="4gx-c8-AmL"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwJ-N4-Vlx" customClass="CCTypeButton">
-                                        <rect key="frame" x="200" y="0.0" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.46724272150000001" green="0.92109784029999997" blue="0.4446944847" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="4DP-85-sxj"/>
-                                            <constraint firstAttribute="height" constant="100" id="MwR-gU-uK6"/>
-                                        </constraints>
-                                        <state key="normal" title="Event"/>
-                                        <connections>
-                                            <action selector="presentSearch:" destination="Pgp-lj-mvo" eventType="touchUpInside" id="7Nw-KJ-Teg"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxF-gF-Awp" customClass="CCTypeButton">
-                                <rect key="frame" x="250" y="399" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.46724272150000001" green="0.92109784029999997" blue="0.4446944847" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="E00-JW-YBk"/>
-                                    <constraint firstAttribute="width" constant="100" id="NUC-ru-OK2"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="presentSearch:" destination="Pgp-lj-mvo" eventType="touchUpInside" id="4AG-eR-fwD"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="oxF-gF-Awp" firstAttribute="top" secondItem="Klo-oy-Zno" secondAttribute="bottom" constant="49" id="68o-Mg-dRt"/>
-                            <constraint firstItem="Klo-oy-Zno" firstAttribute="centerY" secondItem="a8D-xo-q3Q" secondAttribute="centerY" id="M2W-fd-DzP"/>
-                            <constraint firstItem="Klo-oy-Zno" firstAttribute="centerX" secondItem="a8D-xo-q3Q" secondAttribute="centerX" id="bzd-Qd-uLo"/>
-                            <constraint firstItem="oxF-gF-Awp" firstAttribute="centerX" secondItem="a8D-xo-q3Q" secondAttribute="centerX" id="fxR-Mh-5v8"/>
-                            <constraint firstItem="vQY-pb-iej" firstAttribute="centerX" secondItem="Klo-oy-Zno" secondAttribute="centerX" id="scY-YF-CeY"/>
-                            <constraint firstItem="Klo-oy-Zno" firstAttribute="top" secondItem="vQY-pb-iej" secondAttribute="bottom" constant="48" id="xWk-0U-Kj0"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="cXP-zw-6yB"/>
-                    <connections>
-                        <outlet property="characterTypeButton" destination="fFe-S8-ooT" id="BZ1-bk-TYW"/>
-                        <outlet property="comicTypeButton" destination="DPz-9e-AD3" id="SUg-g5-X9Y"/>
-                        <outlet property="eventTypeButton" destination="rwJ-N4-Vlx" id="oqo-Gf-H3e"/>
-                        <outlet property="seriesTypeButton" destination="DPD-rz-ab9" id="lQ2-wf-gTE"/>
-                        <outlet property="storyTypeButton" destination="oxF-gF-Awp" id="ieo-sY-7WA"/>
-                        <segue destination="ogK-L9-Ad0" kind="show" identifier="itemSearchSegue" id="PIv-Xm-q5t"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zsV-tu-SeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2470" y="1235"/>
+            <point key="canvasLocation" x="1763" y="1831"/>
         </scene>
         <!--Add Items Table View Controller-->
         <scene sceneID="7Lb-RW-U8o">
@@ -358,7 +275,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6aW-eh-LqC" id="uaY-5k-AEv">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -368,10 +285,14 @@
                             <outlet property="delegate" destination="ogK-L9-Ad0" id="i8p-c4-vcy"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="0dO-6U-CmI"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Lg-SI-ujp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3163" y="1235"/>
+            <point key="canvasLocation" x="2442" y="1831"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9Rl-tU-jvY"/>
+    </inferredMetricsTieBreakers>
 </document>

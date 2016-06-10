@@ -9,7 +9,6 @@
 
 #import "CCNewCollectionViewController.h"
 #import "CCAddItemsTableViewController.h"
-#import "CCItemTypeViewController.h"
 
 #import "Collection.h"
 
@@ -72,7 +71,7 @@
         [realm addObject:self.collection];
     }];
 
-    [self performSegueWithIdentifier:@"selectItemType" sender:sender];
+    [self performSegueWithIdentifier:@"itemSearchSegue" sender:sender];
 
 }
 
@@ -85,7 +84,7 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    CCItemTypeViewController *vc = [segue destinationViewController];
+    CCAddItemsTableViewController *vc = [segue destinationViewController];
     vc.collection = self.collection;
 }
 
